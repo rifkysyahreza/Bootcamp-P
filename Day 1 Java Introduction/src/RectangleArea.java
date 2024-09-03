@@ -1,5 +1,13 @@
 public class RectangleArea {
-    public static double calc(double width, double height){
+    private double width;
+    private double height;
+
+    public RectangleArea(double width, double height){
+        this.width = width;
+        this.height = height;
+    }
+
+    public double calc(){
         return width * height;
     }
 }

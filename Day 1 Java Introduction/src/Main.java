@@ -1,8 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         // Solution One
-        double rectangleArea = RectangleArea.calc(5,3);
-        System.out.println("Rectangle area: " + rectangleArea );
+        RectangleArea rectangleOne =  new RectangleArea(5,3);
+        double rectangleOneCalc = rectangleOne.calc();
+        System.out.println("Rectangle area: " + rectangleOneCalc );
         System.out.println("");
 
         // Solution Two
