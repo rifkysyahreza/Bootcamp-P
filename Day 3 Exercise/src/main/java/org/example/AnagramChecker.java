@@ -10,12 +10,24 @@ public class AnagramChecker {
     }
 
     public boolean check(String stringTwoToCheck){
-        char[] charArrayBaseWords = baseWords.toCharArray();
-        char[] charArrayWordToCheck = stringTwoToCheck.toCharArray();
+        char[] charArrayBaseWords = baseWords.replaceAll("\\s", "").toCharArray();
+        char[] charArrayWordToCheck = stringTwoToCheck.replaceAll("\\s", "").toCharArray();
 
-        Arrays.sort(charArrayBaseWords);
-        Arrays.sort(charArrayWordToCheck);
+        if (charArrayBaseWords.length != charArrayWordToCheck.length){
+            return false;
+        }
 
-        return Arrays.equals(charArrayBaseWords, charArrayWordToCheck);
+        int[] freq = new int[26];
+
+        for (int i = 0; i < charArrayBaseWords.length; i++) {
+            freq[charArrayBaseWords[i] - 'a']++;
+            freq[charArrayWordToCheck[i] - 'a']--;
+        }
+
+        for (int frequency : freq) {
+            if (frequency != 0) return false;
+        }
+
+        return true;
     }
 }

@@ -1,5 +1,6 @@
 package org.example;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -49,6 +50,10 @@ public class Main {
         System.out.println("Sum of Vowels From the Word: " + resVowelsCounter);
 
         // Solution 8
+        int[] arrayInput = {64, 34, 25, 12, 22, 11, 90};
+        BubbleSort.bubbleSort(arrayInput);
+        System.out.println("Sorted Array in Ascending Order:");
+        System.out.println(Arrays.toString(arrayInput));
 
         // Solution 9
         System.out.print("Enter the Base Word: ");
