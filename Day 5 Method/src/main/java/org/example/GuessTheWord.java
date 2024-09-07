@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class GuessTheWord {
     Random randomNumber = new Random();
-    private String[] WORDS = {"Hang", "Man", "Method", "Cowboy", "Crazy", "Horse", "Steel", "Ball"};
+    private String[] WORDS = {"Hang", "Man"};
     private String randomWord = WORDS[randomNumber.nextInt(WORDS.length - 1)].toLowerCase();
     ArrayList<String> arrayOfUnderscore = new ArrayList<>();
 
