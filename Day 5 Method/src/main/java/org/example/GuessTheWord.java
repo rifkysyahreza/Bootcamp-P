@@ -29,6 +29,27 @@ public class GuessTheWord {
             System.out.print("Try The Letter: ");
             String wordPart = scanner.nextLine();
 
+            // check if the input is valid (only letter)
+            if (!wordPart.matches("[a-zA-Z]+")){
+                System.out.println("Please Input a Valid Letter");
+                count--;
+                continue;
+            }
+
+            // check if the input is empty
+            if (wordPart.isEmpty()){
+                System.out.println("Please Input a Letter");
+                count--;
+                continue;
+            }
+
+            // check if the input is only one letter
+            if (wordPart.length() > 1){
+                System.out.println("Please Input Only One Letter");
+                count--;
+                continue;
+            }
+
             // check if the letter exist
             if (randomWord.contains(wordPart)){
                 int indexOfCorrectLetter = randomWord.indexOf(wordPart);
