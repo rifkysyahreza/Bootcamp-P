@@ -11,7 +11,7 @@ public class Main {
         guessGame.play();
 
         // Solution 2
-        System.out.print("Enter the Amount: ");
+        System.out.print("Enter the Amount of Money: ");
         double amountOfMoney = scanner.nextDouble();
         System.out.print("Currency From (USD,EUR,GBP, or JPY): ");
         String currencyFrom = scanner.next();
@@ -21,12 +21,12 @@ public class Main {
         System.out.println(convertResult);
 
         // Solution 3
-        System.out.print("Enter Your Array of Number: "); // use comma after each number ex: 1,2,3,4,5,6
+        System.out.print("Enter Your Array of Number to Remove The Odd: "); // use comma after each number ex: 1,2,3,4,5,6
         String stringOfArrayNumber = scanner.next();
         OddNumberRemover.removeTheOdd(stringOfArrayNumber);
 
         // Solution 4
-        System.out.print("Enter Number: ");
+        System.out.print("Enter Number for FizzBuzzing: ");
         int howMuch = scanner.nextInt();
         FizzBuzz.operation(howMuch);
 

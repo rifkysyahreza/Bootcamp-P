@@ -5,10 +5,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GuessTheWord {
-    Random randomNumber = new Random();
-    private String[] WORDS = {"Hang", "Man"};
-    private String randomWord = WORDS[randomNumber.nextInt(WORDS.length - 1)].toLowerCase();
     ArrayList<String> arrayOfUnderscore = new ArrayList<>();
+    private String randomWord;
+
+    private void randomWordGenerator(){
+        Random randomNumber = new Random();
+        String[] WORDS = {"Hang", "Man", "Method"};
+
+        arrayOfUnderscore.clear();
+        randomWord = WORDS[randomNumber.nextInt(WORDS.length)].toLowerCase();
+    }
 
     private void guessAttempt(){
         Scanner scanner = new Scanner(System.in);
@@ -47,9 +53,24 @@ public class GuessTheWord {
     }
 
     public void play(){
-        for (int i = 0; i < randomWord.length(); i++){
-            arrayOfUnderscore.add("_");
+        Scanner scanner = new Scanner(System.in);
+        boolean status = true;
+
+        while (status){
+            randomWordGenerator();
+
+            for (int i = 0; i < randomWord.length(); i++){
+                arrayOfUnderscore.add("_");
+            }
+            guessAttempt();
+
+            System.out.print("Do You Want to Play Again? (y/n): ");
+            String yesOrNo = scanner.next();
+
+            if(yesOrNo.equalsIgnoreCase("n")){
+                status = false;
+            }
         }
-        guessAttempt();
+
     }
 }
