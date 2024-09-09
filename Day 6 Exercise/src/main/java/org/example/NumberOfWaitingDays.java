@@ -7,23 +7,26 @@ public class NumberOfWaitingDays {
         ArrayList<Integer> listOfWaitingDays = new ArrayList<>();
 
         int days = 1;
-        int lastDays = arrayOfDegree[0];
         for (int i = 0; i < arrayOfDegree.length; i++){
 
             if( i == arrayOfDegree.length - 1){
                 listOfWaitingDays.add(0);
-                break;
             }
 
-            if (lastDays < arrayOfDegree[i+1]){
-                listOfWaitingDays.add(days);
+            for (int j = i +1; j < arrayOfDegree.length; j++){
+                if (arrayOfDegree[i] < arrayOfDegree[j]){
+                    listOfWaitingDays.add(days);
+                    days = 1;
+                    break;
+                }
 
-                lastDays = arrayOfDegree[i];
-                days = 1;
-            }
+                if (arrayOfDegree[i] > arrayOfDegree[j]){
+                    if (j == arrayOfDegree.length - 1){
+                        listOfWaitingDays.add(0);
+                    }
+                    days++;
+                }
 
-            if(lastDays > arrayOfDegree[i+1]){
-                days++;
             }
 
         }
