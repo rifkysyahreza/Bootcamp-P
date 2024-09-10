@@ -8,7 +8,8 @@ public class Main {
 //        result.calculate();
 
         // Solution 2
-        DataCalculatorFromFile.readCsv("D:\\Belajar\\Purwadhika\\Project\\Day 7 Exceptions\\src\\main\\java\\org\\example\\sales.csv");
+        DataCalculatorFromFile result = new DataCalculatorFromFile();
+        result.readCsv("D:\\Belajar\\Purwadhika\\Project\\Day 7 Exceptions\\src\\main\\java\\org\\example\\sales.csv");
     }
 
 }
