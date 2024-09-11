@@ -23,8 +23,10 @@ public class TicketGenerator {
             fr = new FileWriter(FILE_PATH);
             fr.write(HEADER);
 
+            TicketSystem ticketSystem = new TicketSystem();
             while (numberOfTicket > 0) {
                 Ticket ticket = new Ticket(generateUUID(), EVENT[new Random().nextInt(EVENT.length)], 1000);
+                ticketSystem.addTicket(ticket);
 
                 fr.write("\n" + ticket.getUUID() + "," + ticket.getEventName() + "," + ticket.getPrice());
                 numberOfTicket--;
@@ -34,8 +36,9 @@ public class TicketGenerator {
             System.out.println(e.getMessage());;
         }finally {
             try {
-                assert fr != null;
-                fr.close();
+                if( fr != null) {
+                    fr.close();
+                }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
