@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.concurrent.ExecutionException;
 
 public class DataCalculatorFromFile {
     private Scanner scanner;
