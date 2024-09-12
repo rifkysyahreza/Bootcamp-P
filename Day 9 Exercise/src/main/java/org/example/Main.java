@@ -4,7 +4,11 @@ import org.example.Apps.Apps;
 
 public class Main {
     public static void main(String[] args) {
-        Apps app = new Apps();
-        app.run();
+        try {
+            Apps app = new Apps();
+            app.run();
+        } catch (Exception e) {
+            System.out.println("Something went wrong");
+        }
     }
 }
