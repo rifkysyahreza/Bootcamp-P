@@ -15,4 +15,16 @@ public class ErrorHandling {
         }
 
     }
+
+    public String checkStringInput(String string, Scanner scanThis) {
+        System.out.print(string);
+        scanThis = new Scanner(System.in);
+
+        try {
+            return scanThis.nextLine();
+        } catch (Exception e) {
+            System.out.println("Invalid input. Please enter a string.");
+            return checkStringInput(string, scanThis);
+        }
+    }
 }

@@ -4,6 +4,7 @@ import java.util.*;
 
 public class EventHandler {
     HashMap<UUID, String> ticketSold = new HashMap<UUID, String>();
+    ErrorHandling errorHandling = new ErrorHandling();
 
     public void checkEvents(List<Event> events) {
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++");
@@ -45,6 +46,13 @@ public class EventHandler {
             default:
         }
 
+        String confirmation = errorHandling.checkStringInput("Are you sure you want to buy ticket for " + eventName + "? (Y/N) ", scanner);
+        if (confirmation.equalsIgnoreCase("n")){
+            System.out.println("Purchase cancelled.");
+            System.out.println();
+            return;
+        }
+
         for (Event event : events) {
             if (event.getEventName().equals(eventName)) {
                 if (event.getTicketAmount() >= 1) {
@@ -76,8 +84,7 @@ public class EventHandler {
         System.out.println("Ticket Details:");
         System.out.println("Ticket ID: " + uuid);
         System.out.println("Event Name: " + event);
-
-        System.out.println(this.ticketSold);
+        System.out.println();
     }
 
     public void listAllTicketBooked() {
