@@ -7,6 +7,7 @@ public class RunDSA {
     ErrorHandler errorHandler = new ErrorHandler();
     Stack stack = new Stack();
     Queue queue = new Queue();
+    BinarySearchTree binarySearchTree = new BinarySearchTree();
 
     public void Run(){
         System.out.println("\n+++++++ Data Structure and Algorithm +++++++");
@@ -24,7 +25,7 @@ public class RunDSA {
                 runQueue();
                 break;
             case 3:
-                System.out.println("Binary Search Tree");
+                runBinarySearchTree();
                 break;
             case 4:
                 System.exit(0);
@@ -104,6 +105,49 @@ public class RunDSA {
                 runQueue();
             } else {
                 System.out.println("Please input number, 'd' to dequeue from queue or 'q' to exit");
+            }
+        } finally {
+            scanner.close();
+        }
+    }
+
+    public void runBinarySearchTree(){
+        try {
+            boolean binarySearchTreeStatus = true;
+            while (binarySearchTreeStatus) {
+                System.out.print("Input number to insert to tree, type 'q' to exit, type 's' to search number : ");
+                String input = scanner.next();
+
+                if (input.equalsIgnoreCase("q")) {
+                    binarySearchTreeStatus = false;
+                    continue;
+                } else if (input.equalsIgnoreCase("s")) {
+                    int searchNumber = errorHandler.checkInt("Input number to search: ", scanner);
+                    int searchResult = binarySearchTree.search(searchNumber);
+
+                    if (searchResult == 0) {
+                        System.out.println(searchNumber + " not found in tree");
+                    } else {
+                        System.out.println(searchNumber + " found in tree");
+                        System.out.println("\nPreorder: ");
+                        binarySearchTree.preorder();
+                        System.out.println("\n");
+                    }
+
+                    continue;
+
+                } else if (!input.matches("[0-9qQsS]+")) {
+                    throw new Exception("Please input number");
+                }
+
+                binarySearchTree.insert(Integer.parseInt(input));
+            }
+        } catch (Exception e) {
+            if (e.getMessage().equalsIgnoreCase("Please input number")) {
+                System.out.println(e.getMessage());
+                runBinarySearchTree();
+            } else {
+                System.out.println("Please input number or 'q' to exit");
             }
         } finally {
             scanner.close();
