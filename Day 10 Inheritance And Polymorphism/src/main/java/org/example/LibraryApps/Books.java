@@ -2,7 +2,7 @@ package org.example.LibraryApps;
 
 public class Books extends LibraryMaterials {
     String materialName = "Books";
-    private int available = 10;
+    private static int available = 10;
 
     void borrowMaterial(){
         try {
