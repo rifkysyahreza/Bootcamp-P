@@ -31,7 +31,7 @@ console.log(`Difference between dates is ${days} days`);
 let fullName: string = "John Doe";
 let initials: string = fullName
   .split(" ")
-  .map((nameElement) => nameElement[0])
+  .map((nameElement: string) => nameElement[0])
   .join("");
 
 console.log(`Initials of ${fullName} is ${initials}`);
