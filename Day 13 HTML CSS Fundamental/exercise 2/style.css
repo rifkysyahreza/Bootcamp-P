@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: #beadfa;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+input {
+  width: 200px;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  background: url("./imgs/search-icon.png") no-repeat scroll 10px 8px;
+  background-color: white;
+  padding-left: 30px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border: white 4px solid;
+  border-radius: 60px;
+  background-clip: padding-box;
+  float: left;
+  background-size: cover;
+  background-position: center center;
+}
+
+nav {
+  font-family: "Mulish", sans-serif;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 60px;
+  color: white;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.right-nav {
+  margin-right: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+}
+
+.about-us {
+  background-color: #8e8ffa;
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
+section h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #000;
+  font-weight: 800;
+}
+
+section h2 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-style: italic;
+}
+
+section p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.wrapper-about-us {
+  width: 565px;
+}
+
+.blah {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.blah h1 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  font-style: italic;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  background-color: #c780fa;
+}
+
+.review h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card {
+  border: black 2px solid;
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card h2 {
+  color: black;
+}
+
+.card .avatar {
+  width: 120px;
+  height: 120px;
+  border: black 2px solid;
+}
+
+.cardlist {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding-bottom: 50px;
+}
