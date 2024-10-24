@@ -139,3 +139,22 @@ footer {
   padding-left: 120px;
   text-align: left;
 }
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  padding-right: 120px;
+  padding-left: 325px;
+  text-align: left;
+}
+
+.footer-right .social-media {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.footer-right img {
+  width: 15px;
+  height: 15px;
+}
